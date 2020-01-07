@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0 ; 
+        padding: 0;
+        list-style-type: none;
+    }
+	a{
+		text-decoration: none;
+	}
+	.head{
+		width:100%;
+		height:30px;
+		background:#ccc;
+		margin-bottom: 20px;
+	}
+	.headc{
+		float:left;
+		line-height: 30px;
+		margin-left: 50px;
+		
+	}
+	.headr ul{
+		float: right;
+		width:55%;
+	}
+	.headr ul li{
+		float:left;
+		margin-right: 3%;
+		line-height: 30px;
+		color:#222
+	}
+	.headr ul li a{
+		color:#000000;
+	}
+	.serch{
+		width:100%;
+		line-height: 40px;
+		height:60px;
+	}
+	.serchl a{
+		float: left;
+		margin:10px 20px;
+	}
+	.serchc {
+		float:left;
+		width:40%;
+	}
+	.serchc input{
+		width:80%;
+		height:30px;
+		margin:15px 0;
+		border: 2px solid #ccc;
+		border-right: 0;
+	}
+	.serchc button{
+		width:18%;
+		margin: 15px -4px;
+		height:34px;
+		background:red;
+		border: 0;
+		color:#ccc;
+	}
+	.serchr a{
+		float:right;
+		border:1px soid #ccc;
+		width:8%;
+		height:30px;
+		margin:15px 0;
+		text-align: center;
+		background: #ccc;
+		line-height: 30px;
+		margin: 15px 10px;
+		color:#000000;
+	}
+	.nav{
+		width:100%;
+		height:40px;
+		background: #ee0000;
+		margin-top: 20px;
+		margin-bottom: 40px;
+		position: relative;
+		
+	}
+	.navleft{
+		width:15%;
+		float: left;
+		height:220px;
+		position: absolute;
+		z-index: 999999;
+		left:1%;
+	}
+	.navleft ul{
+		width:100%;
+		height:40px;
+	}
+	.navleft ul li{
+		width:100%;
+		height:40px;
+		line-height: 40px;
+		background: #fff;
+		text-align: center;
+		
+		
+	} 
+	
+	.navleft ul li:hover{
+		background: #ff0000;
+	}
+	.navleft ul li:nth-child(1){
+		background: #ee0000;
+	}
+	.nav ul{
+		float:left;
+		width:70%;
+		height:40px;
+		position: absolute;
+		left:20%;
+		z-index: 999999;
+	}
+	
+	.nav ul li a{
+		float:left;
+		padding: 0 1%;
+		margin:0 1.2%;height: 40px;
+		line-height: 40px;
+		color:#fff;
+		font-size: 14px;
+	}
+	.nav ul li a:hover{
+		background: #ff0000;
+	}
+    .pagWarp{
+        height: 40px;
+        box-shadow: 0 2px 5px #b6b6b6;
+        position: absolute;
+        border-radius: 2px;
+        right: 42%;
+        top: 700px;
+    }
+    #btnL,#btnR{
+        line-height: 40px;
+        cursor: pointer;
+    }
+    #btnL{
+        float: left;
+    }
+    #btnR{
+        float: right;             
+    }
+    .pagWarp ul{        
+        height: 40px;
+        margin: 0 auto;
+        float: left;
+        text-align: center;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    .pagWarp ul li{
+        float: left;
+        text-align: center;
+        line-height: 40px;
+        padding: 0 4px;
+    }
+    .active{
+        color: blue;
+        font-size:30px;
+    }
+
+ .wen{
+ 	width:100%;
+ 	
+ }
+.list{
+ 	width:98%;
+ 	height:240px;
+ 	margin-left:2%;
+ }
+ .list li{
+ 	width:18%;
+ 	height:100%;
+ 	float:left;
+ 	text-align: center;
+ 	border: 1px solid #3ccc;
+ 	position: relative;
+	overflow:hidden;
+ }
+ .list li img{
+ 	width:70%;
+ }
+ .list li h2{
+ 	font-size: 14px;
+ 	color:#ccc
+ }
+ .list li span{
+ 	color:orangered;
+ }
+ .list li p{
+ 	width:100%;
+ 	height:50%;
+ 	background: #ccc;
+ 	opacity: 0.8;
+ 	position:absolute;
+ 	bottom: 0;
+ 	display:none;
+ 	z-index: 2;
+ 	
+ }
+	.list li input{
+		display: block;
+		margin:0 auto;
+		
+	}
+</style>
+<body>
+	<div class="head">
+		<div class="headleft"></div>
+		<div class="headc">你好，欢迎光临文轩网</div>
+		<div class="headr">
+		<ul>
+		<li>
+		<a href="login.html">【登录】</a>
+		<a href="register.html">【免费注册】</a>
+		</li>	
+		<li>我的订单</li>
+		<li>购书卡</li>
+		<li>新手入门</li>
+		<li>帮助中心</li>
+		<li>客户服务</li>
+		<li>手机文轩</li>
+		</ul>
+		</div>
+	</div>
+	<div class="serch">
+		<div class="serchl"><a href=""><img src="images/logo.png" alt=""></a></div>
+		<div class="serchc">
+			<input type="text">
+			<button><a href="search.html">搜索</a></button>
+		</div>
+		<div class="serchr">
+			<a href="">我的文轩</a>
+			<a href="car.html">购物车</a>
+		</div>
+	</div>
+	<div class="nav">
+		
+		<div class="navleft">
+			<ul>
+				
+			<li>全部商品分类</li>
+			
+			</ul>
+		</div>
+		
+		<ul>
+			<li><a href="">文学频道</a></li>
+			<li><a href="">社科频道</a></li>
+			<li><a href="">经管频道</a></li>
+			<li><a href="">少儿频道</a></li>
+			<li><a href="">生活频道</a></li>
+			<li><a href="">科技频道</a></li>
+			<li><a href="">音响</a></li>
+			<li><a href="">百货</a></li>
+			<li><a href="">电子书</a></li>
+			<li><a href="">国际频道</a></li>
+		</ul>
+	</div>
+    <ul class="list" id="list"></ul>
+    <div class="pagWarp" id="pageWarp">
+        <li id="btnL">上一页</li>
+        <ul>
+        </ul>
+        <li id="btnR">下一页</li>
+    </div>
+</body>
+<script src="js/ajax.js"></script>
+<script>
+
+    class Page{
+        constructor(){
+            this.list = document.getElementById("list");
+            this.left = document.getElementById("btnL");
+            this.right = document.getElementById("btnR");
+            this.pageCont = document.querySelector("#pageWarp ul");
+
+            this.num = 10;
+            this.index = 0;
+
+            this.url = "http://localhost/json/shouye2.json";
+
+            this.load();
+            this.addEvent();
+        }
+        load(){
+            var that = this;
+            ajaxGet(this.url,function(res){
+                that.res = JSON.parse(res);
+                that.display();
+                that.createPage();
+            });
+        }
+        display(){
+            var str = "";
+        
+            for(var i=this.index*this.num;i<this.index*this.num+this.num;i++){
+                if(i<this.res.length){
+                    str += `<li>
+					        <img src="${this.res[i].image}" alt="" >
+					        <h2>${this.res[i].dis}</h2>
+					       <span>${this.res[i].price}</span>
+						   <input type="button" value="加入购物车">
+					    </li>`
+                }
+            }
+            this.list.innerHTML = str;
+        }
+        createPage(){
+            this.maxNum = Math.ceil(this.res.length / this.num);
+            var str = ""
+            for(var i=0;i<this.maxNum;i++){
+                str += `<li index="${i}">${i+1}</li>`;
+            }
+            this.pageCont.innerHTML = str;
+            this.setActive();
+        }
+        setActive(){
+            var li = this.pageCont.children;
+            for(var i=0;i<li.length;i++){
+                li[i].className = "";
+            }
+            li[this.index].className = "active";
+        }
+        addEvent(){
+            var that = this;
+            this.left.onclick = function(){
+                if(that.index == 0){
+                    that.index = that.maxNum-1;
+                }else{
+                    that.index--
+                }
+                that.setActive();
+                that.display();
+            }
+            this.right.onclick = function(){
+                if(that.index == that.maxNum-1){
+                    that.index = 0;
+                }else{
+                    that.index++
+                }
+                that.setActive();
+                that.display();
+            }
+            this.pageCont.onclick = function(eve){
+                if(eve.target.nodeName == "LI"){
+                    that.index = eve.target.getAttribute("index");
+                    that.setActive();
+                    that.display();
+                }
+            }
+        }
+    }
+
+    new Page();
+</script>
+</html>

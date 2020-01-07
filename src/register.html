@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+	<link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+	<div class="top">
+		<img src="images/top.png" alt="">
+	</div>
+	
+	<div class="main">
+		<div class="maintop">
+			
+   <a href="login.html">登录</a>
+		</div>
+    <div class="box">
+		手机号：<input type="text" id="phone placehloder="请输入手机号"><br>
+        密码：<input type="text" id="pass" placehloder="请设置6~16密码"><br>
+		确认密码：<input type="text" id="epass" placehloder="再次输入密码"><br>
+        <input type="button" id="btn" value="注册"">
+        <span></span>
+    </div>
+		
+	</div>
+</body>
+<script>
+    class Register{
+        constructor(){
+            this.user = document.getElementById("user");
+            this.pass = document.getElementById("pass");
+            this.btn = document.getElementById("btn");
+            this.span = document.querySelector("span");
+
+            this.url = "http://localhost:80/api";
+
+            this.addEvent();
+        }
+        addEvent(){
+            var that = this;
+            this.btn.onclick = function(){
+                that.u = that.user.value;
+                that.p = that.pass.value;
+                that.load()
+            }
+        }
+        load(){
+            ajaxPost(this.url,res=>{
+                // console.log(res);
+                this.res = JSON.parse(res)
+                this.display();
+            },{
+                user:this.u,
+                pass:this.p,
+                type:"register"
+            })
+        }
+        display(){
+            // console.log(this.res);
+            if(this.res.code == 0){
+                this.span.innerHTML = "你这个用户名太火了，换一个吧";
+            }else{
+                this.span.innerHTML = "恭喜注册功能，3秒后跳转到<a href='login.html'>登录</a>";
+                setTimeout(() => {
+                    location.href = "login.html";
+                }, 3000);
+            }
+        }
+    }
+
+    new Register();
+
+    function ajaxPost(url,callback,data){
+        data = data || {};
+        var str = "";
+        for(var i in data){
+            str += `${i}=${data[i]}&`;
+        }
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST",url,true);
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState == 4 && xhr.status == 200){
+                callback(xhr.responseText);
+            }
+        }
+        xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+        xhr.send(str);
+    }
+</script>
+</html>
